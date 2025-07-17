@@ -158,3 +158,124 @@ Used in real-world apps to keep them **fast and clean**.
 
 ---
 
+# DAY 2
+
+# 🔄 User Input Conversion in .NET (C#)
+
+## 📌 Key Idea
+
+All user inputs from `Console.ReadLine()` are taken as **strings**. You must convert them to the required type before using.
+
+---
+
+## ✅ Common Conversions
+
+### 🔹 Convert to `int`
+
+```csharp
+int number = Convert.ToInt32(Console.ReadLine());
+```
+
+### 🔹 Convert to `double`
+
+```csharp
+double price = Convert.ToDouble(Console.ReadLine());
+```
+
+### 🔹 Convert to `bool`
+
+```csharp
+bool isActive = Convert.ToBoolean(Console.ReadLine());
+```
+
+### 🔹 Convert to `char`
+
+```csharp
+char grade = Convert.ToChar(Console.ReadLine());
+```
+
+---
+
+## ⚠️ Better: Use `TryParse` for Safety
+
+```csharp
+int number;
+bool success = int.TryParse(Console.ReadLine(), out number);
+```
+---
+
+# 🔍 Understanding `TryParse()` in .NET
+
+## 📌 What is TryParse?
+
+`TryParse()` is a safe method used to **convert a string into another data type** (like `int`, `double`, `bool`, etc.) **without crashing** the program.
+
+Instead of throwing an error on bad input, it returns:
+
+* ✅ `true` if conversion is successful
+* ❌ `false` if conversion fails
+
+---
+
+## 🧠 Key Concept
+
+When you take user input:
+
+```csharp
+string input = Console.ReadLine();
+```
+
+It’s always a **string**.
+
+If you directly try to convert invalid input using `Convert.ToInt32()`, it may throw an exception.
+
+🔒 `TryParse` prevents that by **validating first and parsing safely**.
+
+---
+
+## 🧪 Syntax
+
+```csharp
+bool success = int.TryParse(string input, out int result);
+```
+
+* `input`: the string to be converted
+* `result`: the variable to store the converted value (uses `out`)
+* `success`: `true` or `false` depending on whether conversion worked
+
+---
+
+## 🔹 Real Example
+
+```csharp
+Console.Write("Enter a number: ");
+string userInput = Console.ReadLine();
+
+int number; // no need to assign value before
+bool isValid = int.TryParse(userInput, out number);
+
+if (isValid)
+    Console.WriteLine("You entered: " + number);
+else
+    Console.WriteLine("Invalid input!");
+```
+
+---
+
+## 🔍 What's `out number` Doing?
+
+* `out number` is the **output variable** that holds the result of the conversion **if successful**.
+* You don’t need to initialize it — `TryParse()` will assign it internally.
+* If the parsing fails, `number` gets its **default value** (e.g., 0 for `int`).
+
+---
+
+## ✅ Advantages of TryParse
+
+| Benefit                 | Why it matters                      |
+| ----------------------- | ----------------------------------- |
+| No exception on failure | Safer than `Convert.ToInt32()`      |
+| Easy validation         | Works well for user input           |
+| Lightweight             | Faster than exception-based parsing |
+
+---
