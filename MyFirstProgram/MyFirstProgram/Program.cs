@@ -394,8 +394,8 @@ namespace MyFirstProgram // similar to package name in Java
             Console.WriteLine(dup);
             Console.WriteLine($"hey {str01} how you doing {str02}");
 
-            
-//  TYPE CONVERSION - CONVERT , PARSE , TRYPARSE
+
+            //  TYPE CONVERSION - CONVERT , PARSE , TRYPARSE
             /*
              string input = "123";
 
@@ -415,39 +415,39 @@ namespace MyFirstProgram // similar to package name in Java
                         Console.WriteLine("Invalid input");
              */
 
-// ATM assignment 
-/*
-            string[] cardno = { "123456", "321654", "789456", "741258" };
-            string[] pinno = { "123", "456", "789", "987" };
+            // ATM assignment 
+            /*
+                        string[] cardno = { "123456", "321654", "789456", "741258" };
+                        string[] pinno = { "123", "456", "789", "987" };
 
-            Console.WriteLine("Welcome to ABC ATM");
-            Console.Write("Enter your card number: ");
-            string? inputcardno = Console.ReadLine();   // string? allows null input
+                        Console.WriteLine("Welcome to ABC ATM");
+                        Console.Write("Enter your card number: ");
+                        string? inputcardno = Console.ReadLine();   // string? allows null input
 
-            int cardIndex = Array.IndexOf(cardno, inputcardno); // Array.IndexOf(String[] , value)
+                        int cardIndex = Array.IndexOf(cardno, inputcardno); // Array.IndexOf(String[] , value)
 
-            if (cardIndex != -1)  // Card number found
-            {
-                Console.Write("Enter your 3-digit pin: ");
-                string? inputpinno = Console.ReadLine();
+                        if (cardIndex != -1)  // Card number found
+                        {
+                            Console.Write("Enter your 3-digit pin: ");
+                            string? inputpinno = Console.ReadLine();
 
-                if (inputpinno == pinno[cardIndex])
-                {
-                    Console.WriteLine("Hey, welcome dude!!");
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect PIN.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Card number not recognized.");
-            }
-*/
-        
-//  Calculator program  //
-        
+                            if (inputpinno == pinno[cardIndex])
+                            {
+                                Console.WriteLine("Hey, welcome dude!!");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Incorrect PIN.");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Card number not recognized.");
+                        }
+            */
+
+            //  Calculator program  //
+
             /*
             Console.WriteLine("Well well what shall we calculate !!");
             Console.WriteLine("Enter num_1 : ");
@@ -482,6 +482,35 @@ namespace MyFirstProgram // similar to package name in Java
             }
             */
 
+// Arrays in C# - similar to Java arrays
+
+            String[] cars = { "Volvo", "BMW", "Ford", "Mazda" };
+
+            foreach (String car in cars) {
+                Console.WriteLine(car);
+            }
+
+            // Print every second car in the array used for skipping elements
+            for (int i = 0; i < cars.Length; i+=2) {
+                Console.WriteLine(cars[i]);
+            }
+// Method in C#
+
+            // method performs a specific task and can be reused
+            // Methods can have parameters and return values
+            // Method declaration: accessModifier returnType methodName(parameters) { method body }
+
+            String name = "Abhijith";
+
+            happyBirthday(name);
+            happyBirthday(name);
+
+            static void happyBirthday(String name)
+            { 
+                Console.WriteLine($"happy bday {name}");
+                Console.WriteLine("hbd");
+                Console.WriteLine("hbd");
+            }
 
 
 
@@ -490,7 +519,7 @@ namespace MyFirstProgram // similar to package name in Java
 
 
 
-            Console.ReadKey(); // or Console.ReadLine();
+                Console.ReadKey(); // or Console.ReadLine();
 
         }
     }
