@@ -21,11 +21,11 @@ namespace MyFirstProgram // similar to package name in Java
 
             Console.WriteLine(c1.GetType());
             // for output 
-
+            /*
             Console.WriteLine("whats your name ?");
             String name = Console.ReadLine(); // to get input from user 
             Console.WriteLine("hello"+name+"have a great day!");
-
+            */
 // Math class
             int a = 5;
             int b = 10;
@@ -68,6 +68,84 @@ namespace MyFirstProgram // similar to package name in Java
             str = str.Insert(0, "Hello "); // inserts a substring at the beginning of the string
             Console.WriteLine(str.Length);
             Console.WriteLine(str);
+
+            string name = "Abhi";
+            object clone = name.Clone();
+            Console.WriteLine(clone);  // Output: Abhi
+
+            int result = string.Compare("apple", "banana");
+            Console.WriteLine(result); // Output: < 0 because "apple" comes before "banana"
+
+            int result = string.CompareOrdinal("a", "A");
+            Console.WriteLine(result); // Output: > 0 because 'a' > 'A' in Unicode
+
+            string name = "apple";
+            int result = name.CompareTo("banana");
+            Console.WriteLine(result); // Output: < 0
+
+            string full = string.Concat("Hello", " World");
+            Console.WriteLine(full); // Output: Hello World
+
+            string sentence = "Welcome to .NET";
+            Console.WriteLine(sentence.Contains(".NET")); // Output: True
+
+            string full = string.Concat("Hello", " World");
+            Console.WriteLine(full); // Output: Hello World
+
+            string sentence = "Welcome to .NET";
+            Console.WriteLine(sentence.Contains(".NET")); // Output: True
+
+            bool isEqual = string.Equals("hello", "hello");
+            Console.WriteLine(isEqual); // Output: True
+
+            string name = "Abhi";
+            string message = string.Format("Hello, {0}!", name);
+            Console.WriteLine(message); // Output: Hello, Abhi!'
+
+            string word = "Hi";
+            foreach (char c in word)
+            {
+                Console.WriteLine(c); // Output: H \n i
+            }
+
+            string s = "abc";
+            Console.WriteLine(s.GetHashCode()); // Output: (varies)
+
+            string text = "hello";
+            Console.WriteLine(text.GetType()); // Output: System.String
+
+            string s = "hi";
+            Console.WriteLine(s.GetTypeCode()); // Output: String
+
+            string s = "hello world";
+            Console.WriteLine(s.IndexOf("world")); // Output: 6
+
+            string[] words = { "C#", "Java", "Python" };
+            string result = string.Join(", ", words);
+            Console.WriteLine(result); // Output: C#, Java, Python
+
+            string s = "Hello World";
+            string updated = s.Insert(6, "Beautiful ");
+            Console.WriteLine(updated); // Output: Hello Beautiful World
+
+            string a = string.Intern("hello"); //
+
+            string s = "hi";
+            Console.WriteLine(string.IsInterned(s)); // Output: hi
+
+            string s = "café";
+            Console.WriteLine(s.IsNormalized()); // Output: True (most of the time)
+
+            string input = "";
+            Console.WriteLine(string.IsNullOrEmpty(input)); // Output: True
+
+            string input = "   ";
+            Console.WriteLine(string.IsNullOrWhiteSpace(input)); // Output: True
+
+
+
+            Console.WriteLine(sentence.Contains(".NET")); // Output: True
+
 
 
             // if statement - order of the if else statement matter while using else if 
@@ -257,55 +335,60 @@ namespace MyFirstProgram // similar to package name in Java
 
             */
 
-//  Rock paper scissors game  //
+            //  Rock paper scissors game  //
 
-         /*
+            /*
 
-            string[] strs = {"rock", "paper", "scissor"};
-            int userscore = 0, compscore = 0;
-            Random random = new Random();
+               string[] strs = {"rock", "paper", "scissor"};
+               int userscore = 0, compscore = 0;
+               Random random = new Random();
 
-            Console.WriteLine("rock, paper, scissor!");
+               Console.WriteLine("rock, paper, scissor!");
 
-            for (int count = 0; count < 3; count++)
-            {
-                Console.Write("Enter your choice: ");
-                string user = Console.ReadLine().Trim().ToLower();
+               for (int count = 0; count < 3; count++)
+               {
+                   Console.Write("Enter your choice: ");
+                   string user = Console.ReadLine().Trim().ToLower();
 
-                // Validate input
-                if (!strs.Contains(user))
-                {
-                    Console.WriteLine("Invalid input!");
-                    count--; // Retry the round
-                    continue;
-                }
+                   // Validate input
+                   if (!strs.Contains(user))
+                   {
+                       Console.WriteLine("Invalid input!");
+                       count--; // Retry the round
+                       continue;
+                   }
 
-                string comp = strs[random.Next(0, 3)];
-                Console.WriteLine($"Computer chose: {comp}");
+                   string comp = strs[random.Next(0, 3)];
+                   Console.WriteLine($"Computer chose: {comp}");
 
-                if (user == comp)
-                {
-                    Console.WriteLine("It's a tie!");
-                }
-                else if ((user == "rock" && comp == "scissor") ||
-                         (user == "paper" && comp == "rock") ||
-                         (user == "scissor" && comp == "paper"))
-                {
-                    Console.WriteLine("You win!");
-                    userscore++;
-                }
-                else
-                {
-                    Console.WriteLine("Computer wins!");
-                    compscore++;
-                }
-            }
+                   if (user == comp)
+                   {
+                       Console.WriteLine("It's a tie!");
+                   }
+                   else if ((user == "rock" && comp == "scissor") ||
+                            (user == "paper" && comp == "rock") ||
+                            (user == "scissor" && comp == "paper"))
+                   {
+                       Console.WriteLine("You win!");
+                       userscore++;
+                   }
+                   else
+                   {
+                       Console.WriteLine("Computer wins!");
+                       compscore++;
+                   }
+               }
 
-            Console.WriteLine($"\nFinal Score - You: {userscore} | Computer: {compscore}");
+               Console.WriteLine($"\nFinal Score - You: {userscore} | Computer: {compscore}");
 
-            */
+               */
 
+            String str01 = "abhi";
+            String str02 = "buddy";
+            //int hash = str11.GetHashCode();
+            byte dup = 255; // max value is 0 - 255 for BYTE
 
+            Console.WriteLine(dup);
 
 
             Console.ReadKey(); // or Console.ReadLine();
