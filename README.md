@@ -168,6 +168,16 @@ All user inputs from `Console.ReadLine()` are taken as **strings**. You must con
 
 ---
 
+## 📘 Description of Methods
+
+| Method              | Description                                                          |
+| ------------------- | -------------------------------------------------------------------- |
+| `Convert.ToInt32()` | Converts input to int; handles `null` by returning `0`.              |
+| `int.Parse()`       | Converts to int; **throws exception** if input is invalid or `null`. |
+| `int.TryParse()`    | Safely attempts conversion; returns `true/false`, and outputs value. |
+
+---
+
 ## ✅ Common Conversions
 
 ### 🔹 Convert to `int`
@@ -248,16 +258,30 @@ bool success = int.TryParse(string input, out int result);
 ## 🔹 Real Example
 
 ```csharp
-Console.Write("Enter a number: ");
-string userInput = Console.ReadLine();
+using System;
 
-int number; // no need to assign value before
-bool isValid = int.TryParse(userInput, out number);
+class Program
+{
+    static void Main()
+    {
+        string input = "123";
 
-if (isValid)
-    Console.WriteLine("You entered: " + number);
-else
-    Console.WriteLine("Invalid input!");
+        // 🔁 Convert
+        int a = Convert.ToInt32(input);
+        Console.WriteLine("Convert: " + a); // Output: 123
+
+        // 🔍 Parse
+        int b = int.Parse(input);
+        Console.WriteLine("Parse: " + b);   // Output: 123
+
+        // ✅ TryParse
+        bool isValid = int.TryParse(input, out int c);
+        if (isValid)
+            Console.WriteLine("TryParse: " + c); // Output: 123
+        else
+            Console.WriteLine("Invalid input");
+    }
+}
 ```
 
 ---
