@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using System.Linq;
+using System.Numerics;
 
 
 namespace MyFirstProgram // similar to package name in Java
@@ -508,19 +510,95 @@ namespace MyFirstProgram // similar to package name in Java
             static void happyBirthday(String name)
             { 
                 Console.WriteLine($"happy bday {name}");
-                Console.WriteLine("hbd");
-                Console.WriteLine("hbd");
             }
 
+// RETURN keyword in C#
+// return keyword is used to return a value from a method
+/*
+            int a1 = 5;
+            int b1 = 10;
+
+            Console.WriteLine(add(a1, b1));
+
+            static int add(int a1 , int b1) {
+                int sum1 = a1 + b1;
+                return sum1;
+            } 
+*/
+
+//  METHOD OVERLOADING in C#
+
+            multi(5,10);
+            multi(5, 10, 15);
+
+// PARAMS in c# is used to pass a variable number of arguments to a method
+
+            double total = CheckOut(3.99, 10, 2.13, 20, 45);
+            Console.WriteLine($"Total: {total}");
+
+
+//  Exception handling in C#  //
+
+            try
+            {
+                Console.WriteLine("Enter a number: ");
+                int num = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine($"You entered: {num}");
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number.");
+            }
+            catch (OverflowException ex)
+            {
+                Console.WriteLine("Number is too large or too small.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An unexpected error occurred: " + ex.Message);
+            }
+            finally {
+                Console.WriteLine("This block always executes, regardless of exceptions.");
+            }
+
+// ternary operator in C#
+
+            int x = 10;
+            int y = 20;
+            int minxy = (x < y) ? x : y; // if x is less than y, min = x, else min = y
+            Console.WriteLine($"The minimum value is: {minxy}");
 
 
 
 
 
 
+            Console.ReadKey(); // or Console.ReadLine();
 
-                Console.ReadKey(); // or Console.ReadLine();
+        }
 
+// PARAMS in C# allows us to pass a variable number of arguments to a method
+
+        static double CheckOut(params double[] prices) {
+            double total = 0;
+            foreach (double price in prices) {
+                total += price;
+            }
+            return total;
+
+        }
+
+
+// Method overloading is a feature that allows us to define multiple methods with the same name but different parameters
+// its better to call methods outside the main method
+        
+        static void multi(double a2, double b2)
+        {
+            Console.WriteLine($"{a2} X {b2} = {a2 * b2}");
+        }
+        static void multi(double a2, double b2, double c2)
+        {
+            Console.WriteLine($"{a2} X {b2} X {c2} = {a2 * b2 * c2}");
         }
     }
 }
