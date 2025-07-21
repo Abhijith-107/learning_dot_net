@@ -416,7 +416,7 @@ namespace MyFirstProgram // similar to package name in Java
              */
 
 // ATM assignment 
-
+/*
             string[] cardno = { "123456", "321654", "789456", "741258" };
             string[] pinno = { "123", "456", "789", "987" };
 
@@ -444,6 +444,50 @@ namespace MyFirstProgram // similar to package name in Java
             {
                 Console.WriteLine("Card number not recognized.");
             }
+*/
+        
+//  Calculator program  //
+        
+            /*
+            Console.WriteLine("Well well what shall we calculate !!");
+            Console.WriteLine("Enter num_1 : ");
+            int num11 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the operator (+, -, *, /): ");
+
+            char op = Console.ReadLine()[0]; // Read the first character as the operator
+
+            Console.WriteLine("Enter num_2 : ");
+            int num12 = Convert.ToInt32(Console.ReadLine());
+
+            switch (op) { 
+                case '+':
+                    Console.WriteLine($"\nResult: {num11 + num12}");
+                    break;
+                case '-':
+                    Console.WriteLine($"\nResult: {num11 - num12}");
+                    break;
+                case '*':
+                    Console.WriteLine($"\nResult: {num11 * num12}");
+                    break;
+                case '/':
+                    if (num12 != 0) {
+                        Console.WriteLine($"\nResult: {num11 / num12}");
+                    } else {
+                        Console.WriteLine("\nError: Division by zero is not allowed.");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("\nError: Invalid operator. Please use +, -, *, or /.");
+                    break;
+            }
+            */
+
+
+
+
+
+
+
 
 
             Console.ReadKey(); // or Console.ReadLine();
