@@ -496,11 +496,39 @@ namespace MyFirstProgram // similar to package name in Java
             for (int i = 0; i < cars.Length; i+=2) {
                 Console.WriteLine(cars[i]);
             }
+             Console.WriteLine();
+
+
+// 2D Arrays in C# - similar to Java 2D arrays
+// 2D arrays are used to store data in a table format (rows and columns)
+// Syntax: dataType[,] arrayName = new dataType[rows, columns];
+
+            string[,] table = new string[2, 3]; // 2 rows, 3 columns
+
+            table[0, 0] = "A";
+            table[0, 1] = "B";
+            table[0, 2] = "C";
+            table[1, 0] = "D";
+            table[1, 1] = "E";
+            table[1, 2] = "F";
+
+            for (int i = 0; i < table.GetLength(0); i++) // rows
+            {
+                for (int j = 0; j < table.GetLength(1); j++) // columns
+                {
+                    Console.Write(table[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+             Console.WriteLine();
+
+
+
 // Method in C#
 
-            // method performs a specific task and can be reused
-            // Methods can have parameters and return values
-            // Method declaration: accessModifier returnType methodName(parameters) { method body }
+// method performs a specific task and can be reused
+// Methods can have parameters and return values
+// Method declaration: accessModifier returnType methodName(parameters) { method body }
 
             String name = "Abhijith";
 
