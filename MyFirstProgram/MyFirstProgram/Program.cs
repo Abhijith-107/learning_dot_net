@@ -58,6 +58,8 @@ namespace MyFirstProgram // similar to package name in Java
             */
 
 // String methods
+
+            /*
             string str = "   Abhijith   ";
             str = str.ToUpper(); // converts the string to uppercase
             str = str.ToLower(); // converts the string to lowercase
@@ -146,9 +148,9 @@ namespace MyFirstProgram // similar to package name in Java
 
             Console.WriteLine(sentence.Contains(".NET")); // Output: True
 
+            */
 
-
-            // if statement - order of the if else statement matter while using else if 
+// if statement - order of the if else statement matter while using else if 
             /*
             Console.WriteLine("enter your age: ");
             int age = Convert.ToInt32(Console.ReadLine());
@@ -166,7 +168,7 @@ namespace MyFirstProgram // similar to package name in Java
             */
 
 
-            // switch statement
+// switch statement
 
             /*
             Console.WriteLine("Enter the day of the week: ");
@@ -201,14 +203,14 @@ namespace MyFirstProgram // similar to package name in Java
             }
             */
 
-            // logical operators
+// logical operators
             /*
              * && - AND operator
              * || - OR operator
             */
 
 
-            // while loop  //
+// while loop  //
 
             // infinite loop 
 
@@ -228,7 +230,7 @@ namespace MyFirstProgram // similar to package name in Java
             */
 
 
-            // for-loop statement //
+// for-loop statement //
             /*
                         for (int i = 0; i < 10; i++)
                         {
@@ -237,7 +239,7 @@ namespace MyFirstProgram // similar to package name in Java
 
                         */
 
-            // Nested for loop //
+// Nested for loop //
             /*
             Console.Write("how many rows:");
             int rows  = Convert.ToInt32(Console.ReadLine());
@@ -287,7 +289,7 @@ namespace MyFirstProgram // similar to package name in Java
 
             */
 
-            //  RANDOM NUMBER GUESSING GAME //
+//  RANDOM NUMBER GUESSING GAME //
 
             /*
             Random rnum = new Random();
@@ -335,7 +337,7 @@ namespace MyFirstProgram // similar to package name in Java
 
             */
 
-            //  Rock paper scissors game  //
+//  Rock paper scissors game  //
 
             /*
 
@@ -387,13 +389,65 @@ namespace MyFirstProgram // similar to package name in Java
             String str02 = "buddy";
             //int hash = str11.GetHashCode();
             byte dup = 255; // max value is 0 - 255 for BYTE
-
+            //t demo01 = '8';
+            //Console.WriteLine(demo01);
             Console.WriteLine(dup);
+            Console.WriteLine($"hey {str01} how you doing {str02}");
+
+            
+//  TYPE CONVERSION - CONVERT , PARSE , TRYPARSE
+            /*
+             string input = "123";
+
+                    //Convert
+                    int a = Convert.ToInt32(input);
+                    Console.WriteLine("Convert: " + a); // Output: 123
+
+                    //Parse
+                    int b = int.Parse(input);
+                    Console.WriteLine("Parse: " + b);   // Output: 123
+
+                    //TryParse
+                    bool isValid = int.TryParse(input, out int c);
+                    if (isValid)
+                        Console.WriteLine("TryParse: " + c); // Output: 123
+                    else
+                        Console.WriteLine("Invalid input");
+             */
+
+// ATM assignment 
+
+            string[] cardno = { "123456", "321654", "789456", "741258" };
+            string[] pinno = { "123", "456", "789", "987" };
+
+            Console.WriteLine("Welcome to ABC ATM");
+            Console.Write("Enter your card number: ");
+            string? inputcardno = Console.ReadLine();   // string? allows null input
+
+            int cardIndex = Array.IndexOf(cardno, inputcardno); // Array.IndexOf(String[] , value)
+
+            if (cardIndex != -1)  // Card number found
+            {
+                Console.Write("Enter your 3-digit pin: ");
+                string? inputpinno = Console.ReadLine();
+
+                if (inputpinno == pinno[cardIndex])
+                {
+                    Console.WriteLine("Hey, welcome dude!!");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect PIN.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Card number not recognized.");
+            }
 
 
             Console.ReadKey(); // or Console.ReadLine();
 
-
-}
-}
+        }
+    }
 }
