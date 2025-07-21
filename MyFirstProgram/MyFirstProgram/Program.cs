@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+
 
 namespace MyFirstProgram // similar to package name in Java
 {
@@ -38,11 +40,12 @@ namespace MyFirstProgram // similar to package name in Java
             Console.WriteLine("Round: " + round);
 
 // Random class
+/*
             Random random = new Random(); // creates a new instance of the Random class
             int rn = random.Next(1, 100); // generates a random number between 1 and 100
             double rn2 = random.NextDouble();// generates a random double between 1 and 100
             Console.WriteLine("Random double : " + rn2);
-
+*/
 
 //Finding hypotenuse C = Math.Sqrt(a * a + b * b);
             /*
@@ -67,7 +70,7 @@ namespace MyFirstProgram // similar to package name in Java
             Console.WriteLine(str);
 
 
-// if statement - order of the if else statement matter while using else if 
+            // if statement - order of the if else statement matter while using else if 
             /*
             Console.WriteLine("enter your age: ");
             int age = Convert.ToInt32(Console.ReadLine());
@@ -85,7 +88,7 @@ namespace MyFirstProgram // similar to package name in Java
             */
 
 
-// switch statement
+            // switch statement
 
             /*
             Console.WriteLine("Enter the day of the week: ");
@@ -120,14 +123,14 @@ namespace MyFirstProgram // similar to package name in Java
             }
             */
 
-// logical operators
+            // logical operators
             /*
              * && - AND operator
              * || - OR operator
             */
 
 
-// while loop  //
+            // while loop  //
 
             // infinite loop 
 
@@ -147,16 +150,16 @@ namespace MyFirstProgram // similar to package name in Java
             */
 
 
-// for-loop statement //
-/*
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine(i);
-            }
-            
-            */
+            // for-loop statement //
+            /*
+                        for (int i = 0; i < 10; i++)
+                        {
+                            Console.WriteLine(i);
+                        }
 
-// Nested for loop //
+                        */
+
+            // Nested for loop //
             /*
             Console.Write("how many rows:");
             int rows  = Convert.ToInt32(Console.ReadLine());
@@ -206,7 +209,7 @@ namespace MyFirstProgram // similar to package name in Java
 
             */
 
-//  RANDOM NUMBER GUESSING GAME //
+            //  RANDOM NUMBER GUESSING GAME //
 
             /*
             Random rnum = new Random();
@@ -254,17 +257,53 @@ namespace MyFirstProgram // similar to package name in Java
 
             */
 
+//  Rock paper scissors game  //
 
+         /*
 
+            string[] strs = {"rock", "paper", "scissor"};
+            int userscore = 0, compscore = 0;
+            Random random = new Random();
 
+            Console.WriteLine("rock, paper, scissor!");
 
+            for (int count = 0; count < 3; count++)
+            {
+                Console.Write("Enter your choice: ");
+                string user = Console.ReadLine().Trim().ToLower();
 
+                // Validate input
+                if (!strs.Contains(user))
+                {
+                    Console.WriteLine("Invalid input!");
+                    count--; // Retry the round
+                    continue;
+                }
 
+                string comp = strs[random.Next(0, 3)];
+                Console.WriteLine($"Computer chose: {comp}");
 
+                if (user == comp)
+                {
+                    Console.WriteLine("It's a tie!");
+                }
+                else if ((user == "rock" && comp == "scissor") ||
+                         (user == "paper" && comp == "rock") ||
+                         (user == "scissor" && comp == "paper"))
+                {
+                    Console.WriteLine("You win!");
+                    userscore++;
+                }
+                else
+                {
+                    Console.WriteLine("Computer wins!");
+                    compscore++;
+                }
+            }
 
+            Console.WriteLine($"\nFinal Score - You: {userscore} | Computer: {compscore}");
 
-
-
+            */
 
 
 
